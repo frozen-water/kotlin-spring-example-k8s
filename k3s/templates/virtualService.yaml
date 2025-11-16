@@ -1,0 +1,19 @@
+apiVersion: networking.istio.io/v1
+kind: VirtualService
+metadata:
+  name: {{ .Release.Name }}-vs
+  namespace: {{ .Values.namespace }}
+spec:
+  hosts:
+    - "{{ .Values.host }}"
+  gateways:
+    - {{ .Release.Name }}-gateway
+  http:
+      - match:
+          - uri:
+              prefix: "/"
+        route:
+          - destination:
+              host: {{ .Release.Name }}-svc.{{ .Values.namespace }}.svc.cluster.local
+              port:
+                number: 80

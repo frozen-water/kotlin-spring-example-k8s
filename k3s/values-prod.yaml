@@ -1,0 +1,10 @@
+replicaCount: 3
+
+namespace: backend-was
+port: 80
+
+host: prod.spring
+cert: prod-spring-cert
+
+env:
+  SPRING_PROFILES_ACTIVE: "prod"

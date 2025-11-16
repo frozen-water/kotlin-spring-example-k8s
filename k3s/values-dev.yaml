@@ -1,0 +1,9 @@
+namespace: development
+port: 80
+
+host: dev.spring
+cert: dev-spring-cert
+
+env:
+  SPRING_PROFILES_ACTIVE: "dev"
+

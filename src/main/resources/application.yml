@@ -1,0 +1,22 @@
+server:
+  port: 8090
+
+spring:
+  application:
+    name: example
+
+environment: local
+
+management:
+  server:
+    port: 8090  # 애플리케이션과 같은 포트 사용해도 OK
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus
+  endpoint:
+    health:
+      probes:
+        enabled: true    # k8s liveness/readiness 에 꼭 필요
+    prometheus:
+      enabled: true

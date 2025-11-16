@@ -1,0 +1,12 @@
+replicaCount: 2
+
+namespace: development
+host: local.spring
+
+image:
+  repository: frozenwater1/kotlin-spring-example
+  pullPolicy: Always
+  tag: "latest"
+
+env:
+  SPRING_PROFILES_ACTIVE: "local"
