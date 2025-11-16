@@ -23,8 +23,10 @@ $ helm upgrade --install kotlin-spring-example-prod ./k3s -f k3s/values-prod.yam
 ##### ArgoCD 자동 배포
 ```shell
 # http://localhost:8080 (port-forward)
-project: development (개발 환경)
-project: backend-was (운영 환경)
+$ kubectl port-forward svc/argocd-server -n argocd 8080:80
+
+# project: development (개발 환경)
+# project: backend-was (운영 환경)
 
 ```
 
