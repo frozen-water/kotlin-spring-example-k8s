@@ -11,12 +11,21 @@
 
 ---
 
+##### 수동 배포
 ```shell
 # development 배포 (개발 환경)
 $ helm upgrade --install kotlin-spring-example-dev ./k3s -f k3s/values-dev.yaml -n development
 
 # backend-was 배포 (운영 환경)
 $ helm upgrade --install kotlin-spring-example-prod ./k3s -f k3s/values-prod.yaml -n backend-was
+```
+
+##### ArgoCD 자동 배포
+```shell
+# http://localhost:8080 (port-forward)
+project: development (개발 환경)
+project: backend-was (운영 환경)
+
 ```
 
 # k3s 구조
